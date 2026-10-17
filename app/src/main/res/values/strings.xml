@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DRAPE</string>
+    <string name="tagline">Digital Wardrobe &amp; Outfit Studio</string>
+    <string name="nav_today">Today</string>
+    <string name="nav_wardrobe">Wardrobe</string>
+    <string name="nav_style">Style</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_studio">Studio</string>
+    <string name="nav_stylist">Stylist</string>
+    <string name="foundation_status_ready">Phase 1 Foundation Active</string>
+    <string name="foundation_offline_badge">Offline-First Ready</string>
+    <string name="design_system_status_ready">Liquid Glass Design System</string>
+    <string name="search_wardrobe_placeholder">Search garments, colors, or tags…</string>
+    <string name="action_add_garment">Add Garment</string>
+    <string name="action_compose_outfit">New Outfit</string>
+    <string name="action_toggle_theme">Switch Theme</string>
+    <string name="action_clear_search">Clear search</string>
+    <string name="offline_mode_notice">Core wardrobe &amp; outfit studio run 100% locally offline.</string>
+    <string name="today_eyebrow">Daily Style Briefing</string>
+    <string name="wardrobe_eyebrow">Personal Archive</string>
+    <string name="style_eyebrow">Outfit Studio &amp; AI Stylist</string>
+    <string name="profile_eyebrow">Insights &amp; Preferences</string>
+</resources>
