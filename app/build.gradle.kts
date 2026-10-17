@@ -1,4 +1,4 @@
-import java.util.Properties
+﻿import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -56,7 +56,7 @@ android {
                     ?: "drape_release"
                 keyPassword = System.getenv("DRAPE_KEY_PASSWORD")
                     ?: localProps.getProperty("drape.key.password")
-                    ?: "drape_release_key_pass"
+                    ?: "drape_release_store_pass"
             }
         }
     }
@@ -171,3 +171,4 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
+

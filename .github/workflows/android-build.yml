@@ -1,4 +1,4 @@
-name: DRAPE Android CI & APK Build
+﻿name: DRAPE Android CI & APK Build
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
               -keyalg RSA -keysize 2048 -validity 10000 \
               -alias drape_release \
               -storepass drape_release_store_pass \
-              -keypass drape_release_key_pass \
+              -keypass drape_release_store_pass \
               -dname "CN=DRAPE App, OU=Mobile, O=DRAPE, L=Jakarta, S=DKI, C=ID"
           fi
 
@@ -60,7 +60,7 @@ jobs:
         env:
           DRAPE_KEYSTORE_PASSWORD: ${{ secrets.DRAPE_KEYSTORE_PASSWORD || 'drape_release_store_pass' }}
           DRAPE_KEY_ALIAS: ${{ secrets.DRAPE_KEY_ALIAS || 'drape_release' }}
-          DRAPE_KEY_PASSWORD: ${{ secrets.DRAPE_KEY_PASSWORD || 'drape_release_key_pass' }}
+          DRAPE_KEY_PASSWORD: ${{ secrets.DRAPE_KEY_PASSWORD || 'drape_release_store_pass' }}
         run: gradle assembleRelease --stacktrace
 
       - name: Upload Debug APK Artifact
@@ -76,3 +76,4 @@ jobs:
           name: drape-signed-release-apk
           path: app/build/outputs/apk/release/*.apk
           if-no-files-found: error
+
