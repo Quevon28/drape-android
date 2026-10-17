@@ -1,4 +1,4 @@
-package com.drape.app.core.data.remote
+﻿package com.drape.app.core.data.remote
 
 import com.drape.app.core.model.GarmentCategory
 import com.drape.app.core.model.GarmentItem
@@ -311,8 +311,8 @@ class DrapeAiStylistEngine(
         )
 
         val titlePrefix = when {
-            refinementOption != null -> "${occasion.displayName} · ${refinementOption.label.removePrefix("+ ")}"
-            !customRefinementPrompt.isNullOrBlank() -> "${occasion.displayName} · Custom Edit"
+            refinementOption != null -> "${occasion.displayName} Â· ${refinementOption.label.removePrefix("+ ")}"
+            !customRefinementPrompt.isNullOrBlank() -> "${occasion.displayName} Â· Custom Edit"
             else -> "${occasion.displayName} Edit"
         }
 
@@ -501,8 +501,8 @@ class DrapeAiStylistEngine(
 
         val directiveText = when {
             !customPrompt.isNullOrBlank() && refinementOption != null ->
-                "${refinementOption.label} + "${customPrompt.trim()}""
-            !customPrompt.isNullOrBlank() -> ""${customPrompt.trim()}""
+                "${refinementOption.label} + '${customPrompt.trim()}'"
+            !customPrompt.isNullOrBlank() -> '${customPrompt.trim()}'
             refinementOption != null -> refinementOption.label
             else -> "Shuffle"
         }
@@ -521,3 +521,4 @@ class DrapeAiStylistEngine(
             garmentIds.sorted().joinToString("|")
     }
 }
+
