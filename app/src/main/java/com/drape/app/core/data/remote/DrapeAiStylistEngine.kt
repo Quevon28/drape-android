@@ -77,7 +77,7 @@ class DrapeAiStylistEngine(
                     customRefinementPrompt = customRefinementPrompt?.takeIf { it.isNotBlank() },
                     wardrobe = descriptors
                 )
-                val response = remoteApi.generateOutfit(request)
+                val response = remoteApi!!.generateOutfit(request)
                 val validClosetIds = wardrobe.map { it.id }.toSet()
                 val validReturnedIds = response.selectedGarmentIds
                     .distinct()
@@ -501,8 +501,8 @@ class DrapeAiStylistEngine(
 
         val directiveText = when {
             !customPrompt.isNullOrBlank() && refinementOption != null ->
-                "${refinementOption.label} + '${customPrompt.trim()}'"
-            !customPrompt.isNullOrBlank() -> '${customPrompt.trim()}'
+                "${refinementOption.label} + ${customPrompt.trim()}"
+            !customPrompt.isNullOrBlank() -> customPrompt.trim()
             refinementOption != null -> refinementOption.label
             else -> "Shuffle"
         }
@@ -521,4 +521,5 @@ class DrapeAiStylistEngine(
             garmentIds.sorted().joinToString("|")
     }
 }
+
 

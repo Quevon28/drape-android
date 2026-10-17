@@ -1,4 +1,4 @@
-package com.drape.app.core.security
+﻿package com.drape.app.core.security
 
 import androidx.compose.runtime.Immutable
 import java.io.File
@@ -25,8 +25,8 @@ object DrapeSecurityPolicy {
     private val FORBIDDEN_SECRET_PATTERNS = listOf(
         Regex("sk-[a-zA-Z0-9_-]{12,}"),
         Regex("AIza[0-9A-Za-z_-]{20,}"),
-        Regex("(?i)(api_key|apikey|client_secret|access_token)\s*[:=]"),
-        Regex("(?i)Bearer\s+sk-")
+        Regex("(?i)(api_key|apikey|client_secret|access_token)\\s*[:=]"),
+        Regex("(?i)Bearer\\s+sk-")
     )
 
     fun containsForbiddenClientSecret(input: String): Boolean {
@@ -79,3 +79,4 @@ object DrapeSecurityPolicy {
         return cleaned.ifBlank { "garment_photo.jpg" }
     }
 }
+
